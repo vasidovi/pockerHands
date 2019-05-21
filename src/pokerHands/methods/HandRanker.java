@@ -1,6 +1,5 @@
 package pokerHands.methods;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -8,6 +7,7 @@ import java.util.Map;
 
 import pokerHands.models.Card;
 import pokerHands.models.Hand;
+import pokerHands.models.HandCardGroup;
 
 public class HandRanker {
 	
@@ -47,16 +47,16 @@ public class HandRanker {
 			} else if (isConsecutive) {
 				hand.setRank(ranks.get("Straight"));
 			} else {
-				
-			Map<String, Integer> groupedSameValueCards = groupCardsByValue(hand);
-			List<Integer> sameCardCounts = new ArrayList<>(groupedSameValueCards.values());
+		
+			HandUtility handUtility = new HandUtility();
+			List<HandCardGroup> groupedSameValueCards = handUtility.groupCardsByValue(hand);
 			
-			Collections.sort(sameCardCounts, Collections.reverseOrder());
+			Collections.sort(groupedSameValueCards);
 			
-			 Integer highestCount = sameCardCounts.get(0);
-			 Integer secondHighestCount = sameCardCounts.get(1);
+			Integer highestCount = groupedSameValueCards.get(0).getCount();
+			Integer secondHighestCount = groupedSameValueCards.get(1).getCount();
 			 
-			 if ( highestCount == 4) {
+			 if (highestCount == 4) {
 				 
 				 hand.setRank(ranks.get("Four of a Kind"));
 			 } else if (highestCount == 3) {
@@ -77,21 +77,7 @@ public class HandRanker {
 			}
 	}
 	
-	private Map<String, Integer> groupCardsByValue(Hand hand){
-		
-		Map <String, Integer> groupedSameValueCards = new HashMap<>();
-		
-		for ( Card card : hand.getCards()) {
-			
-	     String value  = card.getValue().toString();
-	     Integer count = groupedSameValueCards.getOrDefault(value, 0) + 1;
-	     
-	     groupedSameValueCards.put(value, count);
-		
-		}
-		
-		return groupedSameValueCards;
-	}
+
 
 	private boolean isHandFlush(Hand hand) {
 		List<Card> cards = hand.getCards();
@@ -99,7 +85,7 @@ public class HandRanker {
 		String suit = cards.get(0).getSuit();
 
 		for (Card card : cards) {
-			if (card.getSuit() != suit)
+			if (!card.getSuit().equals(suit))
 				return false;
 		}
 		return true;

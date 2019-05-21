@@ -62,7 +62,6 @@ public class Main {
         System.out.println("Games played : " + player1.getHands().size()); 
         System.out.println("Player 1 vicotries : " + victories.getOrDefault(player1, 0));
         System.out.println("Player 2 vicotries : " + victories.getOrDefault(player2, 0));
-
      
      }
      

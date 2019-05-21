@@ -29,7 +29,7 @@ public class GameController {
 		Stream<Player> keyStream = keys(round, winningHand);
 		Player winner = keyStream.findFirst().get();
 		
-
+		
 		return winner;
 	}
 
@@ -56,6 +56,7 @@ public class GameController {
 
 		return playerVictoryCount;
 	}
+	
 
 	public void assignCardsToPlayers(Integer cardCount, List<Player> players, List<Card> cards) {
 
