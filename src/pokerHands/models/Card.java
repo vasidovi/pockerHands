@@ -5,33 +5,29 @@ public class Card implements Comparable<Card> {
 	Integer value;
 	String suit;
 
-	// optional
-	// "face || royal/ rank"
-//	String type;
-//	String title;
-
 	public Integer getValue() {
 		return value;
 	}
-	
+
 	public String getSuit() {
 		return suit;
 	}
-	
+
 	public void setValue(Integer value) {
 		this.value = value;
 	}
-	
+
 	public void setSuit(String suit) {
 		this.suit = suit;
 	}
-	
+
 	public Card(Integer value, String suit) {
 		super();
 		this.value = value;
 		this.suit = suit;
 	}
 
+	/** Sorts in descending order */
 	@Override
 	public int compareTo(Card otherCard) {
 
@@ -45,7 +41,4 @@ public class Card implements Comparable<Card> {
 	public String toString() {
 		return "Card [value=" + value + ", suit=" + suit + "]";
 	}
-	
-	
-
 }

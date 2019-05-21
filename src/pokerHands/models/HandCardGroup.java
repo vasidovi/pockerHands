@@ -24,6 +24,7 @@ public class HandCardGroup implements Comparable<HandCardGroup> {
 			this.count = count;
 		}
 		
+		/** Sorts in descending order, first by count than by value */
 		@Override
 		public int compareTo(HandCardGroup o) {
 			
@@ -34,6 +35,5 @@ public class HandCardGroup implements Comparable<HandCardGroup> {
 			    return this.getCardValue() < o.getCardValue() ? 1 : -1;
 			} else
 				return this.getCount() < o.getCount() ? 1 : -1;
-		}
-			
+		}	
 }
