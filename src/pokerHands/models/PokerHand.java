@@ -8,8 +8,18 @@ import java.util.Map;
 
 import pokerHands.enums.PokerHandRanks;
 
-public class PokerHand extends Hand {
+public class PokerHand {
+	
+    List<PokerCard> cards;
 	Integer rank;
+	
+	public List<PokerCard> getCards() {
+		return cards;
+	}
+
+	public void setCards(List<PokerCard> cards) {
+		this.cards = cards;
+	}
 	
 	public Integer getRank() {
 		return rank;
@@ -20,7 +30,7 @@ public class PokerHand extends Hand {
 	}
 
 	public PokerHand(List<PokerCard> cards, Integer rank) {
-		super(cards);
+		this.cards = cards;
 		this.rank = rank;
 	}
 
