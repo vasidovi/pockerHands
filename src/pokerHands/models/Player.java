@@ -5,13 +5,13 @@ import java.util.List;
 public class Player {
 
 	String name;
-	List<Hand> hands;
+	List<PokerHand> hands;
 
 	public String getName() {
 		return name;
 	}
 
-	public List<Hand> getHands() {
+	public List<PokerHand> getHands() {
 		return hands;
 	}
 
@@ -19,11 +19,11 @@ public class Player {
 		this.name = name;
 	}
 
-	public void setHand(List<Hand> hands) {
+	public void setHand(List<PokerHand> hands) {
 		this.hands = hands;
 	}
 
-	public Player(String name, List<Hand> hands) {
+	public Player(String name, List<PokerHand> hands) {
 		super();
 		this.name = name;
 		this.hands = hands;

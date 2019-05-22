@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import pokerHands.enums.Suits;
-import pokerHands.models.Card;
+import pokerHands.models.PokerCard;
 
 public class InputParser {
 
@@ -23,7 +23,7 @@ public class InputParser {
 		faceValues.put("A", 14);
 	}
 
-	public Card convertToCard(String abbreviation) {
+	public PokerCard convertToCard(String abbreviation) {
 
 		if (abbreviation.length() != 2) {
 			System.err.print("Failed to parse card from " + abbreviation);
@@ -37,7 +37,7 @@ public class InputParser {
 
 			Integer value = faceValues.get(valueKey);
 			String suit = suitKey.title();
-			return new Card(value, suit);
+			return new PokerCard(value, suit);
 		} else {
 			System.err.print("Failed to parse card from " + abbreviation);
 			return null;

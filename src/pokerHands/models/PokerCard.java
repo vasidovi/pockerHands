@@ -1,6 +1,6 @@
 package pokerHands.models;
 
-public class Card implements Comparable<Card> {
+public class PokerCard implements Comparable<PokerCard> {
 
 	Integer value;
 	String suit;
@@ -21,7 +21,7 @@ public class Card implements Comparable<Card> {
 		this.suit = suit;
 	}
 
-	public Card(Integer value, String suit) {
+	public PokerCard(Integer value, String suit) {
 		super();
 		this.value = value;
 		this.suit = suit;
@@ -29,7 +29,7 @@ public class Card implements Comparable<Card> {
 
 	/** Sorts in descending order */
 	@Override
-	public int compareTo(Card otherCard) {
+	public int compareTo(PokerCard otherCard) {
 
 		if (this.getValue() == otherCard.getValue())
 			return 0;

@@ -4,19 +4,17 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import pokerHands.models.Hand;
+import pokerHands.models.PokerHand;
 import pokerHands.models.HandCardGroup;
 
-public class PokerHandComparator implements Comparator<Hand> {
+public class PokerHandComparator implements Comparator<PokerHand> {
 
 	@Override
-	public int compare(Hand o1, Hand o2) {
+	public int compare(PokerHand o1, PokerHand o2) {
 		if (o1.getRank() == o2.getRank()) {
 
-			HandUtility handUtility = new HandUtility();
-
-			List<HandCardGroup> hand1Group = handUtility.groupCardsByValue(o1);
-			List<HandCardGroup> hand2Group = handUtility.groupCardsByValue(o2);
+			List<HandCardGroup> hand1Group = o1.groupCardsByValue();
+			List<HandCardGroup> hand2Group = o2.groupCardsByValue();
 
 			Collections.sort(hand1Group);
 			Collections.sort(hand2Group);

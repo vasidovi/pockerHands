@@ -7,20 +7,20 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 import pokerHands.logic.InputParser;
 import pokerHands.logic.PokerHandComparator;
-import pokerHands.models.Card;
-import pokerHands.models.Hand;
+import pokerHands.models.PokerCard;
+import pokerHands.models.PokerHand;
 
 public class PokerHandComparatorTest {
 
 	InputParser parser = new InputParser();
-	Card aceD = parser.convertToCard("AD");
-	Card twoD = parser.convertToCard("2D");
-	Card fiveD = parser.convertToCard("5D");
+	PokerCard aceD = parser.convertToCard("AD");
+	PokerCard twoD = parser.convertToCard("2D");
+	PokerCard fiveD = parser.convertToCard("5D");
 
-	List<Card> cardHi = new ArrayList<>();
-	List<Card> cardLow = new ArrayList<>();
-	List<Card> cardFullHouseHiTriplets = new ArrayList<>();
-	List<Card> cardFullHouseHiPair = new ArrayList<>();
+	List<PokerCard> cardHi = new ArrayList<>();
+	List<PokerCard> cardLow = new ArrayList<>();
+	List<PokerCard> cardFullHouseHiTriplets = new ArrayList<>();
+	List<PokerCard> cardFullHouseHiPair = new ArrayList<>();
 
 	@Test
 	public void test1() {
@@ -41,14 +41,14 @@ public class PokerHandComparatorTest {
 	}
 	
 
-	Hand highCardValue = new Hand(cardHi, 0);
-	Hand lowCardValue = new Hand(cardLow, 0);
+	PokerHand highCardValue = new PokerHand(cardHi, 0);
+	PokerHand lowCardValue = new PokerHand(cardLow, 0);
 
-	Hand highRank = new Hand(cardLow, 10);
-	Hand lowRank = new Hand(cardHi, 1);
+	PokerHand highRank = new PokerHand(cardLow, 10);
+	PokerHand lowRank = new PokerHand(cardHi, 1);
 	
-	Hand fullHouseHiTriplets = new Hand(cardFullHouseHiTriplets,7);
-	Hand fullHoushHiPair = new Hand(cardFullHouseHiPair,7);
+	PokerHand fullHouseHiTriplets = new PokerHand(cardFullHouseHiTriplets,7);
+	PokerHand fullHoushHiPair = new PokerHand(cardFullHouseHiPair,7);
 
 	PokerHandComparator comparator = new PokerHandComparator();
 		

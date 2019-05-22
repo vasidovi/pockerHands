@@ -7,11 +7,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import pokerHands.models.Card;
+import pokerHands.models.PokerCard;
 
 public class InputReader {
 	
-	public List<Card> readInput(String path, InputParser inputParser) {
+	public List<PokerCard> readInput(String path, InputParser inputParser) {
 
 		String line = null;
 
@@ -20,7 +20,7 @@ public class InputReader {
 
 			BufferedReader bufferedReader = new BufferedReader(fileReader);
 
-			List<Card> cards = new ArrayList<>();
+			List<PokerCard> cards = new ArrayList<>();
 
 			while ((line = bufferedReader.readLine()) != null) {
 
@@ -28,7 +28,7 @@ public class InputReader {
 
 				for (String abbreviation : abbreviationsInLine) {
 					
-					Card card = inputParser.convertToCard(abbreviation);
+					PokerCard card = inputParser.convertToCard(abbreviation);
 					cards.add(card);
 				}
 			}
