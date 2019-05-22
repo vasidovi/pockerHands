@@ -28,9 +28,4 @@ public class Player {
 		this.name = name;
 		this.hands = hands;
 	}
-
-	@Override
-	public String toString() {
-		return "Player [name=" + name + ", hands=" + hands + "]";
-	}
 }

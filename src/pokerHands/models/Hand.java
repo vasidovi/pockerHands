@@ -28,9 +28,4 @@ public class Hand {
 		this.cards = cards;
 		this.rank = rank;
 	}
-
-	@Override
-	public String toString() {
-		return "Hand [cards=" + cards + ", rank=" + rank + "]";
-	}
 }

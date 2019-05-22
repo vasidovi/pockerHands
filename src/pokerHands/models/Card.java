@@ -37,8 +37,4 @@ public class Card implements Comparable<Card> {
 			return this.getValue() < otherCard.getValue() ? 1 : -1;
 	}
 
-	@Override
-	public String toString() {
-		return "Card [value=" + value + ", suit=" + suit + "]";
-	}
 }
